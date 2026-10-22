@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calzados Artesanales - Fábrica Directa</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons para interfaz limpia -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Landing Header -->
+    <header class="navbar">
+        <div class="logo">
+            <i data-lucide="footprints"></i>
+            <span>Calzados Elite</span>
+        </div>
+        <nav>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Calzado al por mayor y detal directo de fábrica</h1>
+        <p>Calidad, diseño y confort a precios insuperables. Fabricación 100% nacional.</p>
+        <button class="btn-primary" onclick="toggleChat()">
+            <i data-lucide="message-square"></i> Hablar con un Asesor Bot
+        </button>
+    </section>
+
+    <!-- Catálogo Rápido -->
+    <section id="catalogo" class="catalog">
+        <h2>Nuestros Productos Destacados</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img">👟</div>
+                <h3>Tenis Deportivos Urbanos</h3>
+                <p>Suela de alta densidad y corte textil transpirable.</p>
+            </div>
+            <div class="card">
+                <div class="card-img">👞</div>
+                <h3>Mocasines en Cuero</h3>
+                <p>Elegancia y confort para uso diario o formal.</p>
+            </div>
+            <div class="card">
+                <div class="card-img">🥾</div>
+                <h3>Botas Industriales / Trabajo</h3>
+                <p>Puntera reforzada y suela antideslizante.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Widget Flotante del Chatbot -->
+    <div class="chat-widget" id="chatWidget">
+        <!-- Trigger Button -->
+        <button class="chat-trigger" onclick="toggleChat()" id="chatTrigger">
+            <i data-lucide="message-circle"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div class="chat-window hidden" id="chatWindow">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <i data-lucide="bot"></i>
+                    <div>
+                        <h4>Asistente Calzados Elite</h4>
+                        <span class="status"><span class="dot"></span> En línea</span>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="toggleChat()">&times;</button>
+            </div>
+
+            <div class="chat-body" id="chatBody">
+                <!-- Los mensajes y botones se renderizan dinámicamente -->
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" id="userInput" placeholder="Escribe tu consulta..."
+                    onkeypress="handleKeyPress(event)">
+                <button onclick="sendFreeText()" id="sendBtn">
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
